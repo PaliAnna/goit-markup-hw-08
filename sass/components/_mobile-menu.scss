@@ -1,0 +1,109 @@
+.menu-button {
+  display: inline-block;
+  margin: 0;
+  border: none;
+  background-color: transparent;
+
+  &:hover,
+  &:focus {
+    fill: $button-blue;
+    transition-property: fill;
+    @extend %animation;
+  }
+
+  @media screen and (min-width: 767px) {
+    display: none;
+  }
+}
+
+.menu-button .icon-close {
+  display: none;
+}
+.menu-button.is-open .icon-close {
+  display: block;
+}
+.menu-button.is-open .icon-menu {
+  display: none;
+}
+
+.mobile-container {
+  position: absolute;
+  right: 0;
+  left: 0;
+  width: 100%;
+  background-color: $bgn-white-color;
+  padding-top: 60px;
+  padding-bottom: 60px;
+  text-align: center;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.04), 0px 2px 4px rgba(0, 0, 0, 0.08),
+    0px 1px 3px rgba(0, 0, 0, 0.16);
+
+  opacity: 0;
+  visibility: hidden;
+  overflow: auto;
+  z-index: 5;
+
+  @media screen and (min-width: 768px) {
+    display: none;
+  }
+}
+.mobile-container.is-open {
+  opacity: 1;
+  visibility: visible;
+  overflow: scroll;
+}
+
+.mobile-menu .item {
+  position: relative;
+  margin-bottom: 40px;
+}
+.mobile-menu .item :last-child {
+  margin-bottom: 0px;
+}
+.mobile-menu {
+  margin-bottom: 60px;
+}
+.mobile-contact .item:not(:last-child) {
+  margin-bottom: 16px;
+}
+
+.mobile-link {
+  display: inline-flex;
+  color: $main-text-color;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 1.17;
+  letter-spacing: 0.02;
+
+  &:hover,
+  &:focus {
+    color: $button-blue;
+    transition-property: color;
+    @extend %animation;
+  }
+}
+
+.mobile-link.contact {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: $second-text-color;
+}
+
+.current {
+  position: relative;
+  display: inline-block;
+  color: $button-blue;
+
+  &::after {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 4px;
+    margin-top: 8px;
+
+    background-color: currentColor;
+    border-radius: 2px;
+  }
+}

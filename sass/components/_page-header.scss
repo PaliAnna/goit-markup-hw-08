@@ -1,0 +1,155 @@
+/* header */
+.header-border {
+  border-bottom: 1px solid $border-header;
+}
+.header-container {
+  padding-bottom: 16px;
+  padding-top: 16px;
+
+  @media screen and (min-width: 768px) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  @media screen and (min-width: 1200px) {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+}
+
+.main-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  @media screen and (min-width: 1200px) {
+    display: flex;
+    align-items: center;
+    margin-right: auto;
+    letter-spacing: 0.02em;
+  }
+
+  .nav-box {
+    display: none;
+
+    @media screen and (min-width: 768px) {
+      display: flex;
+      margin-left: 88px;
+    }
+
+    & .item:not(:last-child) {
+      margin-right: 50px;
+    }
+    & .item {
+      position: relative;
+    }
+  }
+
+  .nav-link {
+    display: block;
+    padding-top: 33px;
+    padding-bottom: 33px;
+    color: $main-text-color;
+    font-weight: 500;
+
+    &:hover,
+    &:focus {
+      color: $button-blue;
+      transition-property: color;
+      @extend %animation;
+    }
+  }
+
+  .current {
+    color: $button-blue;
+
+    &::after {
+      position: absolute;
+      bottom: 0;
+      content: "";
+      display: block;
+      width: 100%;
+      height: 4px;
+      background-color: currentColor;
+      border-radius: 2px;
+    }
+  }
+}
+
+.contacts-box {
+  display: none;
+
+  @media screen and (min-width: 768px) {
+    display: block;
+    align-items: center;
+
+    & .item + .item {
+      margin-top: 10px;
+    }
+  }
+
+  @media screen and (min-width: 1200px) {
+    display: flex;
+    align-items: flex-end;
+
+    & .item + .item {
+      margin-left: 50px;
+    }
+  }
+}
+
+.contacts-icon {
+  margin-right: 10px;
+  fill: $second-text-color;
+
+  .contacts-link:hover &,
+  .contacts-link:focus & {
+    fill: $button-blue;
+    transition-property: fill;
+    @extend %animation;
+  }
+}
+.contacts-icon.email {
+  width: 14px;
+  height: 10px;
+}
+.contacts-icon.tel {
+  width: 10px;
+  height: 14px;
+}
+
+@media screen and (min-width: 1200px) {
+  .contacts-icon.email {
+    width: 16px;
+    height: 12px;
+  }
+  .contacts-icon.tel {
+    width: 10px;
+    height: 16px;
+  }
+}
+
+.contacts-link {
+  display: inline-flex;
+  align-items: center;
+  color: $second-text-color;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.16;
+
+  @media screen and (min-width: 1200px) {
+    font-size: 14px;
+  }
+
+  &:hover,
+  &:focus {
+    color: $button-blue;
+    transition-property: color;
+    @extend %animation;
+  }
+}

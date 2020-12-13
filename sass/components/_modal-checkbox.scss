@@ -1,0 +1,49 @@
+/* checkbox */
+.check-contract-terms {
+  margin-top: 10px;
+}
+.check-label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.check-input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+.check-icon {
+  fill: $bgn-white-color;
+  width: 16px;
+  height: 15px;
+  margin-right: 8px;
+  border: 2px solid $main-text-color;
+  border-radius: 2px;
+
+  .check-input:checked + &,
+  .check-input:checked:focus + & {
+    fill: $bgn-white-color;
+    background-color: $button-blue;
+    background-origin: border-box;
+    border: transparent;
+    @extend %animation;
+  }
+}
+.contract-terms {
+  font-size: 12px;
+  color: $second-text-color;
+  line-height: 1.16;
+
+  @media screen and (min-width: 1200px) {
+    font-size: 14px;
+    line-height: 1.7;
+  }
+}
+.terms-link {
+  color: $button-blue;
+}
